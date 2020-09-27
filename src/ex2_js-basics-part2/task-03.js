@@ -2,6 +2,7 @@ function calculateArray (arr) {
   let evenNumbers = 0, oddNumbers = 0, zeroNumbers = 0;
 
   for (let i = 0; i < arr.length; i++) {
+
     if ((typeof(arr[i]) !== "number")) {
       continue;
     }
