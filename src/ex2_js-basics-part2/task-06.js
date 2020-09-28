@@ -1,23 +1,29 @@
 function checkPrimeNumber (a) {
   if (a === 0) {
-    return (`${a} - это ноль`);
+    return `${a} - это ноль`;
   }
 
   if (a === 1) {
-    return (`${a} - это один, не простое и не составное число`);
+    return `${a} - это один, не простое и не составное число`;
   }
 
-  if (a > 1000) {
-    return ('Данные неверны');
+  if (a === 2) {
+    return `${a} - простое число`;
   }
 
-  for (let i = 2; i <= (a/3); i++) {
+  if ((a < 0 ) || (a > 1000)) {
+    return 'Данные неверны';
+  }
+
+  let i = 2;
+  do {
     if (a % i === 0) {
       return (`Число ${a} - составное число`);
     }
-  }
+    i++;
+  } while (i <= (a/3));
 
-  return (`Число ${a} - простое число`);
+  return `Число ${a} - простое число`;
 }
 
 module.exports = checkPrimeNumber;

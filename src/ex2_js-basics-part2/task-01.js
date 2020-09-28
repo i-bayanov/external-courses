@@ -3,15 +3,17 @@ function checkType (a) {
     return undefined;
   }
 
-  if ((typeof (a)) === "number") {
+  const TYPE_OF_INPUT = typeof a;
+
+  if (TYPE_OF_INPUT === 'number') {
     return 'number';
   }
 
-  if ((typeof (a)) === "string") {
+  if (TYPE_OF_INPUT === 'string') {
     return 'string';
   }
 
   return undefined;
 }
 
-module.exports = checkType
+module.exports = checkType;
