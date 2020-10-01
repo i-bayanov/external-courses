@@ -5,12 +5,8 @@ function checkType (a) {
 
   const TYPE_OF_INPUT = typeof a;
 
-  if (TYPE_OF_INPUT === 'number') {
-    return 'number';
-  }
-
-  if (TYPE_OF_INPUT === 'string') {
-    return 'string';
+  if ((TYPE_OF_INPUT === 'number') || (TYPE_OF_INPUT === 'string')) {
+    return TYPE_OF_INPUT;
   }
 
   return undefined;
