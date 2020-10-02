@@ -7,21 +7,17 @@ function checkPrimeNumber (a) {
     return `${a} - это один, не простое и не составное число`;
   }
 
-  if (a === 2) {
-    return `${a} - простое число`;
-  }
-
   if ((a < 0 ) || (a > 1000)) {
     return 'Данные неверны';
   }
+  
+  const maxIteration = Math.sqrt (a);
 
-  let i = 2;
-  do {
+  for (let i = 2; i <= maxIteration; i++) {
     if (a % i === 0) {
       return (`Число ${a} - составное число`);
     }
-    i++;
-  } while (i <= (a/3));
+  }
 
   return `Число ${a} - простое число`;
 }
