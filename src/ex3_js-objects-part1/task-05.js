@@ -3,4 +3,5 @@ function makeObjectClone (obj) {
 
   return clone;
 }
+
 module.exports = makeObjectClone;

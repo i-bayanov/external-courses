@@ -2,27 +2,34 @@ function makeDeepObjectClone (obj) {
   const clone = {};
 
   for (let key in obj) {
-    if (typeof obj[key] === 'object') {
-      if (Array.isArray(obj[key])) {
-        let arr = [];
+    const currentKey = obj[key];
 
-        for (let element of obj[key]) {
-          if (typeof element === 'object') {
-            arr.push (makeDeepObjectClone (element));
-          }
-          else {
-            arr.push (element);
-          }
-        }
-        clone[key] = arr;
+    if (typeof currentKey === 'object') {
+      if (Array.isArray(currentKey)) {
+        clone[key] = makeDeepArrayClone(currentKey);
       } else {
-        clone[key] = makeDeepObjectClone (obj[key]);
+        clone[key] = makeDeepObjectClone (currentKey);
       }
     } else {
-      clone[key] = obj[key];
+      clone[key] = currentKey;
     }
   }
 
   return clone;
 }
+
+function makeDeepArrayClone (arr) {
+  let cloneArray = [];
+
+  for (let element of arr) {
+    if (typeof element === 'object') {
+      cloneArray.push(makeDeepObjectClone (element));
+    } else {
+      cloneArray.push(element);
+    }
+  }
+
+  return cloneArray;
+}
+
 module.exports = makeDeepObjectClone;

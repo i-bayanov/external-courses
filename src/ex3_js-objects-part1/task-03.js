@@ -3,6 +3,7 @@ function checkKeyInObject (str, obj) {
     return true;
   }
 
-return false;
+  return false;
 }
+
 module.exports = checkKeyInObject;

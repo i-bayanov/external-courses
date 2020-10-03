@@ -7,4 +7,5 @@ function addKeyToObject (str, obj) {
 
   return newObj;
 }
+
 module.exports = addKeyToObject;
