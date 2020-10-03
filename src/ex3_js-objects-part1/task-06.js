@@ -8,7 +8,7 @@ function makeDeepObjectClone (obj) {
       if (Array.isArray(currentKey)) {
         clone[key] = makeDeepArrayClone(currentKey);
       } else {
-        clone[key] = makeDeepObjectClone (currentKey);
+        clone[key] = makeDeepObjectClone(currentKey);
       }
     } else {
       clone[key] = currentKey;
@@ -23,7 +23,7 @@ function makeDeepArrayClone (arr) {
 
   for (let element of arr) {
     if (typeof element === 'object') {
-      cloneArray.push(makeDeepObjectClone (element));
+      cloneArray.push(makeDeepObjectClone(element));
     } else {
       cloneArray.push(element);
     }
