@@ -1,9 +1,5 @@
 function capitalizeFirstLetters (str) {
-  let arr = str.split(' ');
-
-  for (let i = 0; i < arr.length; i++){
-    arr[i] = capitalizeFirstSymbol(arr[i]);
-  }
+  let arr = str.split(' ').map(capitalizeFirstSymbol);
 
   return arr.join(' ');
 }
