@@ -1,8 +1,8 @@
 function insertSubString (str, subStr, pos) {
-  const arr = str.split(' ');
-  const newArr = arr.slice(0, pos+1).concat(subStr, ...arr.slice(pos+1));
+  let arr = str.split(' ');
+  arr.splice(pos + 1, 0, subStr);
 
-  return newArr.join(' ');
+  return arr.join(' ');
 }
 
 module.exports = insertSubString;
