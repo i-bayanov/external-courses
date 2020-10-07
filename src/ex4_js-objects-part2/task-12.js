@@ -1,5 +1,5 @@
-function roundSumNumbers (a, b, pos = 3) {  
-  return Number((a + b).toFixed(pos));
+function roundSumNumbers (a, b) {  
+  return Number((a + b).toFixed(3));
 }
 
 module.exports = roundSumNumbers;

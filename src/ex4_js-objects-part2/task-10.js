@@ -1,9 +1,5 @@
 function reverseString (str) {
-  let arr = str.split('').reduceRight(function(item1, item2) {
-    return item1.concat(item2);
-  }, []);
-
-  return arr.join('');
+  return str.split('').reverse().join('');
 }
 
 module.exports = reverseString;

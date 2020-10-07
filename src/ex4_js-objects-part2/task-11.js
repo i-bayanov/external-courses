@@ -1,9 +1,16 @@
 function countSymbolEntrance (str) {
-  let arr = str.split('');
+  const letters = {};
 
-  while (arr.length > 0) {
-    console.log(`${arr[0]}: ${arr.filter(item => item === arr[0]).length} раз`);
-    arr = arr.filter(item => item !== arr[0]);
+  for (let letter of str) {
+    if (letter in letters) {
+      letters[letter]++;
+    } else {
+      letters[letter] = 1;
+    }
+  }
+
+  for (let letter in letters) {
+    console.log(`${[letter]}: ${letters[letter]} раз`);
   }
 
   return;
