@@ -12,25 +12,25 @@ function Calculator() {
   };
 
   this.add = function(num = 0) {
-    this.result = this.result + num;
+    this.result += num;
 
     return this.add;
   };
 
   this.subtract = function(num = 0) {
-    this.result = this.result - num;
+    this.result -= num;
 
     return this.subtract;
   };
 
   this.divide = function(num = 1) {
-    this.result = this.result / num;
+    this.result /= num;
 
     return this.divide;
   };
 
   this.multiply = function(num = 1) {
-    this.result = this.result * num;
+    this.result *= num;
 
     return this.multiply;
   };
