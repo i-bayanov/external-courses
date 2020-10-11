@@ -13,7 +13,7 @@ function doSliceAnalog (arr, begining = 0, ending = arr.length) {
 
   for (let i = 0; i < end - begin; i++) {
     newArr[i] = arr[i + begin];
-  };
+  }
 
   return newArr;
 }
