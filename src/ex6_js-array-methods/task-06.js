@@ -2,8 +2,9 @@ function doReduceAnalog (arr, func, init) {
   let i = 0;
   let prev;
   
-  if (typeof (init) === 'undefined') {
-    prev = arr[i++];
+  if (init === undefined) {
+    prev = arr[i];
+    i++;
   } else {
     prev = init;
   }
