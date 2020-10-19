@@ -1,0 +1,14 @@
+#n1 {
+  border: 1px solid;
+}
+
+#n2 {
+  outline: 5px inset #666;
+}
+
+#n3 {
+  border-top: 1px dotted;
+  border-left: 2px dashed;
+  border-bottom: 5px groove;
+  border-right: 3px double;
+}
