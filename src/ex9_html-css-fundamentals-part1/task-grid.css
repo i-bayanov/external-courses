@@ -1,13 +1,19 @@
 body {
   padding: 30px;
 }
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "header header" 
+                       "section aside";
+}
 header {
   background: lightblue;
+  grid-area: header;
 }
 section {
   background: lightgreen;
-  width: 75%;
-  float: left;
+  grid-area: section;
 }
 article {
   background: white;
@@ -15,8 +21,7 @@ article {
 }
 aside {
   background: pink;
-  width: 25%;
-  float: right;
+  grid-area: aside;
 }
 header, article, section, .module {
   padding: 1rem;
