@@ -1,0 +1,65 @@
+.frame1 {
+  margin: 10px;
+  width: 50%;
+  height: 150px;
+  background-color: rgb(82, 200, 236);
+  box-shadow: 10px 10px rgb(150, 220, 241),
+              20px 20px rgb(202, 231, 240);
+}
+
+.frame2 {
+  margin: 30px 10px;
+  width: 50%;
+  height: 150px;
+  background-color: rgb(223, 82, 236);
+  position: relative;
+}
+
+.frame2:before, .frame2:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.frame2:before {
+  left: 20px;
+  top: 20px;
+  background-color: rgb(238, 215, 240);
+  z-index: -2;
+}
+
+.frame2:after {
+  left: 10px;
+  top: 10px;
+  background-color: rgb(230, 144, 238);
+  z-index: -1;
+}
+
+.frame3 {
+  margin: 30px 10px;
+  width: 50%;
+  height: 150px;
+  background-color: rgb(151, 236, 82);
+  position: relative;
+}
+
+.frame3_1, .frame3_2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.frame3_1 {
+  left: 10px;
+  top: 10px;
+  background-color: rgb(195, 235, 163);
+  z-index: -1;
+}
+
+.frame3_2 {
+  left: 20px;
+  top: 20px;
+  background-color: rgb(227, 238, 218);
+  z-index: -2;
+}
