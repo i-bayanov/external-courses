@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+#logo {
+  display: flex;
+  height: 93px;
+  width: 403px;
+  align-items: center;
+  justify-content: center;
+  color:#3687C4;
+  font-family: OpenSans, AdobeInvisFont, AdobeArabic-Regular, sans-serif;
+  font-size: 41px;
+  background: url("../ex10_html-css-fundamentals-part2/img/logo.png") no-repeat;
+}
+
+#contact {
+  display: flex;
+  height: 107px;
+  width: 231px;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+#phone, #city, #email {
+  display: flex;
+  height: 45px;
+  width: 35px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#contact hr {
+  height: 29px;
+  width: 1px;
+  color: #BCBEC3;
+}
+
+#phone svg, #city svg, #email svg {
+  fill: #6D6E71;
+}
+
+#phone svg:hover, #city svg:hover, #email svg:hover {
+  fill: #1FAAE2;
+}
+
+#phone:hover::before, #city:hover::before, #email:hover::before {
+  content: attr(data-title);
+  position: absolute;
+  top: -50px;
+  z-index: 1;
+  width: 210px;
+  color:#6D6E71;
+  font-family:OpenSans-Light,AdobeInvisFont,AdobeArabic-Regular;
+  font-size:16px;
+  white-space: nowrap;
+  text-align: center;
+  border: 2px solid #D4D4D5;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+#phone:hover::after, #city:hover::after, #email:hover::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #D4D4D5;
+  top: -8px;
+  position: absolute;
+}
+
+#phone:hover::before {
+  left: 0px;
+}
+
+#email:hover::before {
+  right: 0px;
+}

@@ -1,0 +1,19 @@
+#customers {
+  color: rgb(49, 76, 155);
+  font-family: sans-serif;
+}
+
+#table_head {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.75em;
+  font-weight: bolder;
+}
+
+.name {
+  text-transform: capitalize;
+}
+
+.outstanding::before {
+  content: "$ ";
+}
