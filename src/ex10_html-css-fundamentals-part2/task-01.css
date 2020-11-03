@@ -1,0 +1,18 @@
+img:hover {
+  clip-path: url(#star);
+  animation-name: clips;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+@keyframes clips {
+  0% {
+    clip-path: url(#star);
+  }
+  33% {
+    clip-path: url(#circle);
+  }
+  67% {
+    clip-path: url(#ellipse);
+  }
+}
