@@ -9,6 +9,10 @@ header {
   padding: 60px 0px;
 }
 
+#hidden_nav {
+  display: none;
+}
+
 .logo {
   display: flex;
   height: 93px;
@@ -19,7 +23,6 @@ header {
   color:#3687C4;
   font-family: OpenSans, AdobeInvisFont, AdobeArabic-Regular, sans-serif;
   font-size: 41px;
-
   background: url("../ex10_html-css-fundamentals-part2/img/logo.png") no-repeat;
 }
 
@@ -304,4 +307,47 @@ h1 {
 #why img {
   height: 116px;
   width: 95px;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #style_maker {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 66%;
+  }
+
+  #hidden_nav {
+    display: block;
+    fill: #3687C4;
+  }
+
+  .logo {
+    background: url("../ex10_html-css-fundamentals-part2/img/logo_small.png") no-repeat;
+  }
+
+  #contact, #navigation, .design, a .next {
+    display: none;
+  }
+
+  nav {
+    border: none;
+  }
+
+  .articles {
+    flex-direction: column;
+    margin: 0 auto;
+  }
 }
