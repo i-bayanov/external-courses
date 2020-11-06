@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+.loader {
+  display: inline-block;
+  height: "100px";
+  width: "100px";
+  background: radial-gradient(ellipse at left top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(0,0,0,1) 100%);;
+  clip-path: url(#circle);
+  animation: loader 2s infinite ease-in-out;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.jumping_ball {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  width: 200px;
+}
+
+.block {
+  display: inline-block;
+  height: 50px;
+  width: 20px;
+  background-color: black;
+}
+
+.ball {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: red;
+  animation: jump 2s infinite linear;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  20% {
+    transform: translateX(70px) scaleX(1);
+  }
+  25% {
+    transform: translateX(77px) scaleX(0.3);
+  }
+  30% {
+    transform: translateX(70px) scaleX(1);
+  }
+  50% {
+    transform: translateX(0) scaleX(1);
+  }
+  70% {
+    transform: translateX(-70px) scaleX(1);
+  }
+  75% {
+    transform: translateX(-77px) scaleX(0.3);
+  }
+  80% {
+    transform: translateX(-70px) scaleX(1);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+}
