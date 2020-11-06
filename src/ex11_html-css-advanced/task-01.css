@@ -3,10 +3,9 @@
 }
 
 .loader {
-  display: inline-block;
   height: 100px;
   width: 100px;
-  background: radial-gradient(ellipse at left top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(0,0,0,1) 100%);;
+  background: radial-gradient(circle at 50px 0px, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 10%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);
   clip-path: url(#circle);
   animation: loader 2s infinite ease-in-out;
 }
@@ -44,9 +43,6 @@
 }
 
 @keyframes jump {
-  0% {
-    transform: translateX(0) scaleX(1);
-  }
   20% {
     transform: translateX(70px) scaleX(1);
   }
@@ -55,9 +51,6 @@
   }
   30% {
     transform: translateX(70px) scaleX(1);
-  }
-  50% {
-    transform: translateX(0) scaleX(1);
   }
   70% {
     transform: translateX(-70px) scaleX(1);
@@ -70,5 +63,55 @@
   }
   100% {
     transform: translateX(0) scaleX(1);
+  }
+}
+
+.various_animation {
+  position: relative;
+  height: 400px;
+  width: 400px;
+  background-image: url(https://image.prntscr.com/image/hB_MdKc5QLm2yZXo8jBmCQ.png);
+}
+
+.n1, .n2 {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.n1 {
+  height: 20px;
+  width: 20px;
+  left: 146px;
+  top: 119px;
+  animation: hypnosis 1.5s infinite linear reverse;
+}
+
+.n2 {
+  height: 25px;
+  width: 25px;
+  left: 198px;
+  top: 113px;
+  animation: hypnosis 2s infinite linear alternate;
+}
+
+@keyframes hypnosis {
+  17% {
+    border-radius: unset;
+  }
+  34% {
+    background: radial-gradient(circle, rgba(226,9,2,1) 0%, rgba(36,168,12,1) 55%, rgba(172,181,24,1) 100%);
+  }
+  51% {
+    transform: scaleY(0.5) skew(20deg);
+  }
+  68% {
+    transform: rotateX(180deg);
+  }
+  84% {
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,0,0,1) 33%, rgba(255,0,0,1) 67%, rgba(0,0,0,1) 100%);
+  }
+  100% {
+    border-radius: 50%;
   }
 }
