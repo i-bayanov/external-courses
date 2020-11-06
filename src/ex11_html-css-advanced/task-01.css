@@ -4,8 +4,8 @@
 
 .loader {
   display: inline-block;
-  height: "100px";
-  width: "100px";
+  height: 100px;
+  width: 100px;
   background: radial-gradient(ellipse at left top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 60%, rgba(0,0,0,1) 100%);;
   clip-path: url(#circle);
   animation: loader 2s infinite ease-in-out;
