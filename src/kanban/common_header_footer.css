@@ -1,0 +1,100 @@
+@font-face {
+  font-family: Roboto;
+  src: url(Roboto.ttf)
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+  font-size: 18px;
+}
+
+header, footer {
+  display: flex;
+  height: 55px;
+  --color-logo: white;
+  color: var(--color-logo);
+  background: #0067A3;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.head {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 2;
+}
+
+.logo {
+  margin: auto 14px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  font-size: 28px;
+  stroke: var(--color-logo);
+  stroke-width: 6;
+  fill-opacity: 0;
+}
+
+.logo svg {
+  margin: 8px;
+}
+
+.add_list {
+  display: flex;
+  margin: 11px 50px;
+  height: calc(100% - 22px);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+}
+
+.add_list:hover {
+  box-shadow: 0px 0px 2px 2px black;
+}
+
+.add_list:active {
+  transform: scale(.98);
+}
+
+.add_list svg {
+  margin: auto 5px auto 10px;
+}
+
+.add_list div {
+  margin: auto 10px auto 5px;
+}
+
+.user_menu {
+  display: flex;
+  height: 100%;
+  width: 64px;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+main {
+  height: calc(100vh - 110px);
+  background: #0079bf;
+}
+
+footer {
+  padding: 0 24px;
+}
+
+.tasks_number {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tasks_number div:first-child {
+  margin: auto 36px auto 43px;
+}
