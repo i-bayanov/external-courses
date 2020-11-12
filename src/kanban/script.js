@@ -18,36 +18,26 @@ logOut.innerText = 'Log out';
 
 [account, tasks, hr, logOut].forEach(item => dropDownMenu.appendChild(item));
 
-const showDropMenu = () => {
+const showDropMenu = (event) => {
   userMenu.appendChild(dropDownMenu);
   arrow.classList.add('active');
-  return document.addEventListener('click', isClickInside());
+  userMenu.removeEventListener('click', showDropMenu);
+  event.stopPropagation();
+  document.addEventListener('click', isClickInside);
 }
 
 const hideDropMenu = () => {
   userMenu.removeChild(dropDownMenu);
   arrow.classList.remove('active');
-  return document.removeEventListener('click', click1);
+  document.removeEventListener('click', isClickInside);
+  userMenu.addEventListener('click', showDropMenu);
 }
 
 const isClickInside = (event) => {
   let inside = dropDownMenu.contains(event.target);
   if (!inside) {
-    return setTimeout(hideDropMenu, 100);
+    hideDropMenu();
   }
-  return undefined;
 }
-
-
-// const setAndRemoveAttribute = () => {
-//   document.body.setAttribute('onclick', 'return hideDropMenu()');
-//   document.querySelector('.user_menu').removeAttribute('onclick');
-//   document.querySelector('.dropDownMenu').setAttribute('onclick', 'event.stopPropagation()');
-// }
-
-// const removeAndSetAttribute = () => {
-//   document.body.removeAttribute('onclick');
-//   document.querySelector('.user_menu').setAttribute('onclick', 'return showDropMenu()');
-// }
 
 userMenu.addEventListener('click', showDropMenu);
