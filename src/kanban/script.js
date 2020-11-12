@@ -1,33 +1,53 @@
-const userMenu = document.createElement('div');
+const dropDownMenu = document.createElement('div');
+const account = document.createElement('div');
+const tasks = document.createElement('div');
+const hr = document.createElement('hr');
+const logOut = document.createElement('div');
+const userMenu = document.querySelector('.user_menu');
+const arrow = document.querySelector('.arrow');
 
-userMenu.setAttribute('class', 'dropDownMenu');
-userMenu.appendChild(document.createElement('div')).setAttribute('id', 'account');
-userMenu.appendChild(document.createElement('div')).setAttribute('id', 'tasks');
-userMenu.appendChild(document.createElement('hr'));
-userMenu.appendChild(document.createElement('div')).setAttribute('id', 'log_out');
+dropDownMenu.classList.add('dropDownMenu');
+account.classList.add('account');
+tasks.classList.add('tasks');
+hr.classList.add('dropMenuHr');
+logOut.classList.add('logOut');
 
-function showDropMenu () {
-  document.querySelector('.user_menu').appendChild(userMenu);
-  document.querySelector('#account').innerHTML = 'My account';
-  document.querySelector('#tasks').innerHTML = 'My tasks';
-  document.querySelector('#log_out').innerHTML = 'Log out';
-  document.querySelector('.user_menu svg').setAttribute('style', 'transform: rotateX(180deg)');
-  setTimeout(setAndRemoveAttribute, 100);
+account.innerText = 'My account';
+tasks.innerText = 'My tasks';
+logOut.innerText = 'Log out';
+
+[account, tasks, hr, logOut].forEach(item => dropDownMenu.appendChild(item));
+
+const showDropMenu = () => {
+  userMenu.appendChild(dropDownMenu);
+  arrow.classList.add('active');
+  return document.addEventListener('click', isClickInside());
 }
 
-function hideDropMenu () {
-  document.querySelector('.user_menu').removeChild(userMenu);
-  document.querySelector('.user_menu svg').setAttribute('style', 'transform: rotateX(0deg)');
-  setTimeout(removeAndSetAttribute, 100);
+const hideDropMenu = () => {
+  userMenu.removeChild(dropDownMenu);
+  arrow.classList.remove('active');
+  return document.removeEventListener('click', click1);
 }
 
-function setAndRemoveAttribute () {
-  document.body.setAttribute('onclick', 'return hideDropMenu()');
-  document.querySelector('.user_menu').removeAttribute('onclick');
-  document.querySelector('.dropDownMenu').setAttribute('onclick', 'event.stopPropagation()');
+const isClickInside = (event) => {
+  let inside = dropDownMenu.contains(event.target);
+  if (!inside) {
+    return setTimeout(hideDropMenu, 100);
+  }
+  return undefined;
 }
 
-function removeAndSetAttribute () {
-  document.body.removeAttribute('onclick');
-  document.querySelector('.user_menu').setAttribute('onclick', 'return showDropMenu()');
-}
+
+// const setAndRemoveAttribute = () => {
+//   document.body.setAttribute('onclick', 'return hideDropMenu()');
+//   document.querySelector('.user_menu').removeAttribute('onclick');
+//   document.querySelector('.dropDownMenu').setAttribute('onclick', 'event.stopPropagation()');
+// }
+
+// const removeAndSetAttribute = () => {
+//   document.body.removeAttribute('onclick');
+//   document.querySelector('.user_menu').setAttribute('onclick', 'return showDropMenu()');
+// }
+
+userMenu.addEventListener('click', showDropMenu);

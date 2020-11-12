@@ -11,11 +11,16 @@
   font-size: 18px;
 }
 
-header, footer {
+body {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+}
+
+.header, .footer {
   display: flex;
   height: 55px;
-  --color-logo: white;
-  color: var(--color-logo);
+  color: white;
   background: #0067A3;
   align-items: center;
   justify-content: space-between;
@@ -34,14 +39,16 @@ header, footer {
   display: flex;
   height: 100%;
   align-items: center;
-  font-size: 28px;
-  stroke: var(--color-logo);
+  justify-content: space-between;
+  stroke: currentColor;
   stroke-width: 6;
   fill-opacity: 0;
+  padding: 8px;
 }
 
-.logo svg {
-  margin: 8px;
+.logo_name {
+  font-size: 28px;
+  padding: 0px 8px;
 }
 
 .add_list {
@@ -82,8 +89,12 @@ header, footer {
   cursor: pointer;
 }
 
-.user_menu svg {
+.arrow {
   transition: all .5s linear 0s;
+}
+
+.arrow.active {
+  transform: rotateX(180deg);
 }
 
 .dropDownMenu {
@@ -114,23 +125,28 @@ header, footer {
   right: 20px;
 }
 
-#account, #tasks, #log_out {
+.account, .tasks, .logOut {
   padding: 8px;
   text-align: center;
   white-space: nowrap;
   border-radius: 3px;
 }
 
-#account:hover, #tasks:hover, #log_out:hover {
+.dropMenuHr {
+  border: 1px solid black;
+}
+
+.account:hover, .tasks:hover, .logOut:hover {
   background-color: #0067A3;
 }
 
-main {
-  height: calc(100vh - 110px);
+.main {
+  flex-shrink: 2;
+  height: 100%;
   background: #0079bf;
 }
 
-footer {
+.footer {
   padding: 0 24px;
 }
 

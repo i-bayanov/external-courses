@@ -25,13 +25,13 @@
       <polyline points="1,1 8,8 15,1" fill="none" stroke="white" stroke-width="3" />
     </g>
   </svg>
-  <header>
+  <header class="header">
     <div class="head">
       <div class="logo">
-        <svg viewBox="0 0 133 120" height="28" width="30">
+        <svg  viewBox="0 0 133 120" height="28" width="30">
           <use xlink:href="#logo" />
         </svg>
-        Awesome Kanban Board
+        <span class="logo_name">Awesome Kanban Board</span>
       </div>
       <button type="button" class="add_list">
         <svg viewBox="0 0 22 22" height="22" width="22">
@@ -40,17 +40,17 @@
         <div>Create new list</div>
       </button>
     </div>
-    <div class="user_menu" onclick="return showDropMenu()">
+    <div class="user_menu">
       <img src="avatar.svg">
-      <svg viewBox="0 0 17 10" height="8" width="12">
+      <svg class="arrow" viewBox="0 0 17 10" height="8" width="12">
         <use xlink:href="#arrow" />
       </svg>
     </div>    
   </header>
-  <main>
+  <main class="main">
     
   </main>
-  <footer>
+  <footer class="footer">
     <div class="tasks_number">
       <div>
         Active tasks: &lt;N&gt;
