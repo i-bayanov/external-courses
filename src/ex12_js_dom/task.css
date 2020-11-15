@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #DEB494;
+}
+
+.slider {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.prev, .next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.arrowLeft, .arrowRight {
+  height: 50px;
+  width: 50px;
+}
+
+.arrowLeft {
+  transform: rotate(-135deg);
+  margin-left: 11px;
+}
+
+.arrowRight {
+  transform: rotate(45deg);
+  margin-right: 11px;
+}
+
+.container {
+  height: 300px;
+  width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.left, .center, .right {
+  position: absolute;
+  height: 300px;
+  width: 400px;
+  background: #DEB494 center no-repeat;
+  background-size: contain;
+}
+
+.left {
+  transform: translateX(-100%);
+}
+
+.right {
+  transform: translateX(100%);
+}
+
+.left.toLeft {
+  animation: centerToLeft .3s linear;
+}
+
+.center.toLeft {
+  animation: rightToCenter .3s linear;
+}
+
+.right.toRight {
+  animation: centerToRight .3s linear;
+}
+
+.center.toRight {
+  animation: leftToCenter .3s linear;
+}
+
+@keyframes centerToLeft {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rightToCenter {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes centerToRight {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes leftToCenter {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
