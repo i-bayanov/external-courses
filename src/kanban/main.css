@@ -1,0 +1,56 @@
+.main {
+  display: flex;
+  flex-shrink: 2;
+  height: 100%;
+  width: 100%;
+  background: #0079bf;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow-x: auto;
+  padding: 20px 10px;
+}
+
+.taskList {
+  width: 282px;
+  max-height: 100%;
+  border-radius: 10px;
+  background: #EBECF0;
+  flex-shrink: 0;
+  margin: 0px 10px;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.taskListHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 3px;
+}
+
+.context {
+  border: none;
+  cursor: pointer;
+}
+
+.listOfTasks {
+  list-style: none;
+}
+
+.listOfTasks::-webkit-scrollbar {
+  width: 12px;
+}
+
+.task {
+  background-color: white;
+  border-radius: 5px;
+  margin: 15px 3px;
+  padding: 7px;
+}
+
+.addCard {
+  color: #5E6C84;
+  cursor: pointer;
+  border: none;
+  margin: 0px 3px;
+}

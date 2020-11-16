@@ -11,10 +11,29 @@
   font-size: 18px;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #CBCBCB;
+}
+
 body {
   display: flex;
   flex-flow: column;
   height: 100vh;
+  width: 100vw;
 }
 
 .header, .footer {
@@ -87,6 +106,9 @@ body {
   align-items: center;
   justify-content: space-evenly;
   cursor: pointer;
+  background-color: inherit;
+  border: none;
+  outline: none;
 }
 
 .arrow {
@@ -103,6 +125,7 @@ body {
   right: 10px;
   border: 2px solid black;
   border-radius: 5px;
+  background: #EBECF0;
 }
 
 .dropDownMenu::before, .dropDownMenu::after {
@@ -120,7 +143,7 @@ body {
 .dropDownMenu::after {
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid #0079bf;
+  border-bottom: 8px solid #EBECF0;
   top: -8px;
   right: 20px;
 }
@@ -137,13 +160,7 @@ body {
 }
 
 .account:hover, .tasks:hover, .logOut:hover {
-  background-color: #0067A3;
-}
-
-.main {
-  flex-shrink: 2;
-  height: 100%;
-  background: #0079bf;
+  background-color: white;
 }
 
 .footer {
