@@ -19,6 +19,13 @@
   margin: 0px 10px;
   padding: 12px;
   overflow-y: auto;
+  position: relative;
+}
+
+.prevTasksList {
+  position: absolute;
+  top: 400px;
+  max-height: 300px;
 }
 
 .taskListHead {
@@ -33,11 +40,11 @@
   cursor: pointer;
 }
 
-.listOfTasks {
+.listOfTasks, .prevTasksList ul {
   list-style: none;
 }
 
-.listOfTasks::-webkit-scrollbar {
+.listOfTasks::-webkit-scrollbar, .prevTasksList::-webkit-scrollbar {
   width: 12px;
 }
 
