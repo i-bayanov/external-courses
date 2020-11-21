@@ -32,6 +32,7 @@ const addTask = (event) => {
     for (let i = 0; i < prevTasks.length; i++) {
       const task = document.createElement('li');
       task.classList.add('task');
+      task.addEventListener('click', moveTask);
       task.innerText = `${prevTasks[i].name}`;
       prevTasksList.firstElementChild.appendChild(task);
     }
@@ -55,15 +56,10 @@ const saveTask = () => {
   if (newTaskInput.value) {
     taskLists[0].issues.push({name: `${newTaskInput.value}`});
     localStorage.setItem('tasks', JSON.stringify(taskLists));
-    newTaskInput.value = '';
-    for (let i= 0; i < addCardButtons.length; i++) {
-      addCardButtons[i].addEventListener('click', addTask);
-      addCardButtons[i].disabled = false;
-    }
     renderer();
+  } else {
+    document.querySelector('.main').firstChild.querySelector('.listOfTasks').removeChild(newTaskInput);
   }
-
-  document.querySelector('.main').firstChild.querySelector('.listOfTasks').removeChild(newTaskInput);
   newTaskInput.value = '';
   for (let i= 0; i < addCardButtons.length; i++) {
     addCardButtons[i].addEventListener('click', addTask);
@@ -87,4 +83,17 @@ const isClickInsidePrevTasksList = (event) => {
   if (!inside) {
     removeTaskList();
   }
+}
+
+const moveTask = (event) => {
+  const movedTaskText = event.currentTarget.innerText;
+  for (let i=0; i < taskLists.length; i++) {
+    if (taskLists[i].title === event.currentTarget.parentNode.parentNode.parentNode.classList[1]) {
+      let index = taskLists[i - 1].issues.findIndex(element => element.name === movedTaskText);
+      taskLists[i].issues.push(taskLists[i - 1].issues.splice(index, 1)[0]);
+    }
+  }
+  document.removeEventListener('click', isClickInsidePrevTasksList);
+  localStorage.setItem('tasks', JSON.stringify(taskLists));
+  renderer();
 }

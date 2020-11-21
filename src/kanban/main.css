@@ -30,6 +30,11 @@
   box-shadow: 0 0 2px 2px black;
 }
 
+.prevTasksList li:hover, .prevTasksListUp li:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 2px black;
+}
+
 .taskListHead {
   display: flex;
   align-items: center;
