@@ -10,7 +10,10 @@
   padding: 20px 10px;
 }
 
-.taskList {
+.taskList, .prevTasksList, .prevTasksListUp {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
   width: 282px;
   max-height: 100%;
   border-radius: 10px;
@@ -18,14 +21,13 @@
   flex-shrink: 0;
   margin: 0px 10px;
   padding: 12px;
-  overflow-y: auto;
-  position: relative;
 }
 
-.prevTasksList {
+.prevTasksList, .prevTasksListUp {
   position: absolute;
-  top: 400px;
+  left: -5px;
   max-height: 300px;
+  box-shadow: 0 0 2px 2px black;
 }
 
 .taskListHead {
@@ -38,10 +40,18 @@
 .context {
   border: none;
   cursor: pointer;
+  background-color: #EBECF0;
 }
 
-.listOfTasks, .prevTasksList ul {
+.listOfTasks, .prevTasksList ul, .prevTasksListUp ul {
   list-style: none;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.prevTasksList ul, .prevTasksListUp ul {
+  color: initial;
+  text-align: left;
 }
 
 .listOfTasks::-webkit-scrollbar, .prevTasksList::-webkit-scrollbar {
@@ -56,8 +66,22 @@
 }
 
 .addCard {
+  display: flex;
+  align-items: center;
   color: #5E6C84;
   cursor: pointer;
   border: none;
   margin: 0px 3px;
+  align-self: start;
+  position: relative;
+}
+
+.addCard:disabled {
+  cursor: not-allowed;
+  color: #dcdcdd;
+}
+
+.addCard span:first-child {
+  font-size: 24px;
+  margin-right: 4px;
 }

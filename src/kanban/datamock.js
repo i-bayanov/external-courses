@@ -16,39 +16,39 @@ const dataMock = [
     title: 'ready',
     issues: [
       {
-        id: 'task1',
+        id: 'task3',
         name: 'Shop page – performance issues',
       },
       {
-        id: 'task2',
+        id: 'task4',
         name: 'Checkout bugfix',
       },
       {
-        id: 'task3',
+        id: 'task5',
         name: 'Shop bug1',
       },
       {
-        id: 'task4',
+        id: 'task6',
         name: 'Shop bug2',
       },
       {
-        id: 'task5',
+        id: 'task7',
         name: 'Shop bug3',
       },
       {
-        id: 'task6',
+        id: 'task8',
         name: 'Shop bug4',
       },
       {
-        id: 'task7',
+        id: 'task9',
         name: 'Shop bug5',
       },
       {
-        id: 'task8',
+        id: 'task10',
         name: 'Shop bug6',
       },
       {
-        id: 'task9',
+        id: 'task11',
         name: 'Shop page – performance issues',
       },
     ],
@@ -57,11 +57,11 @@ const dataMock = [
     title: 'inProgress',
     issues: [
       {
-        id: 'task1',
+        id: 'task12',
         name: 'User page – performance issues',
       },
       {
-        id: 'task2',
+        id: 'task13',
         name: 'Auth bugfix',
       },
     ],
@@ -70,13 +70,17 @@ const dataMock = [
     title: 'finished',
     issues: [
       {
-        id: 'task1',
+        id: 'task14',
         name: 'Main page – performance issues',
       },
       {
-        id: 'task2',
+        id: 'task15',
         name: 'Main page bugfix',
       },
     ],
   },
-]
+];
+
+if (!localStorage.getItem('tasks')) {
+  localStorage.setItem('tasks', JSON.stringify(dataMock));
+}

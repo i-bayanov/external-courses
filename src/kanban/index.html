@@ -51,79 +51,7 @@
       </svg>
     </button>    
   </header>
-  <main class="main">
-    <div class="taskList backlog">
-      <div class="taskListHead">
-        Backlog
-        <button type="button" title="context menu" class="context">•••</button>
-      </div>
-      <ul class="listOfTasks">
-        <li class="task">Login page – performance issues</li>
-        <li class="task">Sprint bugfix</li>
-      </ul>
-      <button type="button" title="add card" class="addCard">
-        <svg  viewBox="0 0 14 14" height="14" width="14">
-          <use xlink:href="#cross" />
-        </svg>
-        Add card
-      </button>
-    </div>
-    <div class="taskList ready">
-      <div class="taskListHead">
-        Ready
-        <button type="button" title="context menu" class="context">•••</button>
-      </div>
-      <ul class="listOfTasks">
-        <li class="task">Shop page – performance issues</li>
-        <li class="task">Checkout bugfix</li>
-        <li class="task">Shop bug1</li>
-        <li class="task">Shop bug2</li>
-        <li class="task">Shop bug3</li>
-        <li class="task">Shop bug4</li>
-        <li class="task">Shop bug5</li>
-        <li class="task">Shop bug6</li>
-        <li class="task">Shop page – performance issues</li>
-      </ul>
-      <button type="button" title="add card" class="addCard">
-        <svg  viewBox="0 0 14 14" height="14" width="14">
-          <use xlink:href="#cross" />
-        </svg>
-        Add card
-      </button>
-    </div>
-    <div class="taskList inProgress">
-      <div class="taskListHead">
-        In Progress
-        <button type="button" title="context menu" class="context">•••</button>
-      </div>
-      <ul class="listOfTasks">
-        <li class="task">User page – performance issues</li>
-        <li class="task">Auth bugfix</li>
-      </ul>
-      <button type="button" title="add card" class="addCard">
-        <svg  viewBox="0 0 14 14" height="14" width="14">
-          <use xlink:href="#cross" />
-        </svg>
-        Add card
-      </button>
-    </div>
-    <div class="taskList finished">
-      <div class="taskListHead">
-        Finished
-        <button type="button" title="context menu" class="context">•••</button>
-      </div>
-      <ul class="listOfTasks">
-        <li class="task">Main page – performance issues</li>
-        <li class="task">Main page bugfix</li>
-      </ul>
-      <button type="button" title="add card" class="addCard">
-        <svg  viewBox="0 0 14 14" height="14" width="14">
-          <use xlink:href="#cross" />
-        </svg>
-        Add card
-      </button>
-    </div>
-  </main>
+  <main class="main"></main>
   <footer class="footer">
     <div class="tasks_number">
       <div>
@@ -137,7 +65,10 @@
       Kanban board by Ilya Bayanov, 2020
     </div>
   </footer>
-  <script src="dropdown_menu.js"></script>
-  <script src="tasks.js"></script>
 </body>
+<script src="datamock.js"></script>
+<script src="tasks.js"></script>
+<script src="renderer.js"></script>
+<script src="dropdown_menu.js"></script>
+
 </html>
