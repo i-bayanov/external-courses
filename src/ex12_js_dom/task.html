@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="task.css">
+  <title>Task</title>
+</head>
+<body>
+  <svg style="display: none;">
+    <g id="arrowRight">
+      <polyline points="3,3 10,3 10,10" fill="none" stroke="black" stroke-width="3px" stroke-linecap="round"/>
+    </g>
+  </svg>
+  <main class="main">
+    <div class="slider">
+      <button class="prev" title="Previos" tabindex="1">
+        <svg class="arrowLeft" viewBox="0 0 13 13">
+          <use xlink:href="#arrowRight" />
+        </svg>
+      </button>
+      <div class="container">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+      </div>
+      <button class="next" title="Next" tabindex="1">
+        <svg class="arrowRight" viewBox="0 0 13 13">
+          <use xlink:href="#arrowRight" />
+        </svg>
+      </button>
+    </div><br><br>
+    <label title="autoplay">
+      <input class="autoplay" type="checkbox"> Autoplay
+    </label>
+  </main>
+  <script src="task.js"></script>
+</body>
+</html>
