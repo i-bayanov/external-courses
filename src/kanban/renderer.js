@@ -42,12 +42,7 @@ const renderer = () => {
     addCard.type = 'button';
     addCard.title = 'add card';
     addCard.classList.add('addCard');
-    const plus = document.createElement('span');
-    plus.innerText = '+';
-    addCard.appendChild(plus);
-    const textAdd = document.createElement('span');
-    textAdd.innerText = 'Add card';
-    addCard.appendChild(textAdd);
+    addCard.innerHTML = '<svg height="14" width="14"><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 7h12M7 1v12"/></g></svg>&nbsp;Add card';
     if ((key > 0) && (taskLists[key-1].issues.length === 0)) {
       addCard.disabled = true;
     } else {

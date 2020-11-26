@@ -23,6 +23,11 @@
   padding: 12px;
 }
 
+.newTaskInput {
+  display: block;
+  width: calc(100% - 7px);
+}
+
 .prevTasksList, .prevTasksListUp {
   position: absolute;
   left: -5px;
@@ -71,8 +76,6 @@
 }
 
 .addCard {
-  display: flex;
-  align-items: center;
   color: #5E6C84;
   cursor: pointer;
   border: none;

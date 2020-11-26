@@ -1,4 +1,5 @@
 const addCardButtons = document.getElementsByClassName('addCard');
+const lists = document.getElementsByClassName('taskList');
 const newTaskInput = document.createElement('input');
 const prevTasksList = document.createElement('div');
 
@@ -11,8 +12,7 @@ const addTask = (event) => {
     newTaskInput.type = 'text';
     newTaskInput.name = 'description';
     newTaskInput.placeholder = 'Describe new task';
-    newTaskInput.classList.add('task');
-    newTaskInput.style = 'display: block; width: calc(100% - 7px);';
+    newTaskInput.classList.add('task', 'newTaskInput');
     event.currentTarget.parentNode.querySelector('.listOfTasks').appendChild(newTaskInput);
     newTaskInput.addEventListener('blur', saveTask);
     newTaskInput.focus();
@@ -36,16 +36,17 @@ const addTask = (event) => {
       task.innerText = `${prevTasks[i].name}`;
       prevTasksList.firstElementChild.appendChild(task);
     }
-    if (event.currentTarget.getBoundingClientRect().top > document.body.clientHeight - 360) {
+
+    const buttonPos = event.currentTarget.getBoundingClientRect().top;
+    if (buttonPos > document.body.clientHeight - 360) {
       prevTasksList.classList.add('prevTasksListUp');
-      prevTasksList.style.bottom = `-${document.body.clientHeight - 100 - event.currentTarget.getBoundingClientRect().top}px`;
+      prevTasksList.style.bottom = `-${document.body.clientHeight - 100 - buttonPos}px`;
       prevTasksList.classList.remove('prevTasksList');
     } else {
-      prevTasksList.style.top = `${event.currentTarget.getBoundingClientRect().top - 30}px`;
+      prevTasksList.style.top = `${buttonPos - 30}px`;
     }
     event.currentTarget.parentNode.appendChild(prevTasksList);
-    event.stopPropagation();
-    document.addEventListener('click', isClickInsidePrevTasksList);
+    setTimeout(() => document.addEventListener('click', isClickInsidePrevTasksList));
   }
 }
 
@@ -87,8 +88,14 @@ const isClickInsidePrevTasksList = (event) => {
 
 const moveTask = (event) => {
   const movedTaskText = event.currentTarget.innerText;
-  for (let i=0; i < taskLists.length; i++) {
-    if (taskLists[i].title === event.currentTarget.parentNode.parentNode.parentNode.classList[1]) {
+  let destinationListTitle = '';
+  for (let i = 0; i < lists.length; i++) {
+    if (lists[i].contains(event.currentTarget)) {
+      destinationListTitle = lists[i].classList[1];
+    }
+  }
+  for (let i = 0; i < taskLists.length; i++) {
+    if (taskLists[i].title === destinationListTitle) {
       let index = taskLists[i - 1].issues.findIndex(element => element.name === movedTaskText);
       taskLists[i].issues.push(taskLists[i - 1].issues.splice(index, 1)[0]);
     }
