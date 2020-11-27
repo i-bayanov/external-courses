@@ -24,6 +24,10 @@
     <g id="arrow">
       <polyline points="1,1 8,8 15,1" fill="none" stroke="white" stroke-width="3" />
     </g>
+    <g id="cross" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="1" y1="7" x2="13" y2="7" />
+      <line x1="7" y1="1" x2="7" y2="13" />
+    </g>
   </svg>
   <header class="header">
     <div class="head">
@@ -40,16 +44,14 @@
         <div>Create new list</div>
       </button>
     </div>
-    <div class="user_menu">
+    <button class="user_menu">
       <img src="avatar.svg">
       <svg class="arrow" viewBox="0 0 17 10" height="8" width="12">
         <use xlink:href="#arrow" />
       </svg>
-    </div>    
+    </button>    
   </header>
-  <main class="main">
-    
-  </main>
+  <main class="main"></main>
   <footer class="footer">
     <div class="tasks_number">
       <div>
@@ -63,6 +65,10 @@
       Kanban board by Ilya Bayanov, 2020
     </div>
   </footer>
-  <script src="script.js"></script>
 </body>
+<script src="datamock.js"></script>
+<script src="tasks.js"></script>
+<script src="renderer.js"></script>
+<script src="dropdown_menu.js"></script>
+
 </html>
