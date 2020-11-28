@@ -3,7 +3,10 @@ function Hangman(word) {
 
   this.wrongSymbols = [];
 
-  this.guessedArray = new Array(word.length).fill('_');
+  this.guessTheWord = word;
+
+  this.guessedArray = new Array(this.guessTheWord.length).fill('_');
+
 
   this.guess = (letter) => {
     let correct = 0;
@@ -21,8 +24,8 @@ function Hangman(word) {
       return;
     }
 
-    for (let i = 0; i < word.length; i++) {
-      if (word[i] === letter) {
+    for (let i = 0; i < this.guessTheWord.length; i++) {
+      if (this.guessTheWord[i] === letter) {
         this.guessedArray[i] = letter;
         correct++;
       }
@@ -49,8 +52,11 @@ function Hangman(word) {
     return `${this.getGuessedString()} | errors left ${this.errorsLeft} | wrong letters [${this.getWrongSymbols()}]`;
   };
 
-  this.startAgain = (word) => {
-    hangman = new this.__proto__.constructor(word);
+  this.startAgain = (newWord) => {
+    this.guessTheWord = newWord;
+    this.errorsLeft = 6;
+    this.wrongSymbols = [];
+    this.guessedArray = new Array(this.guessTheWord.length).fill('_');
   };
 
   this.getGuessedString = () => {

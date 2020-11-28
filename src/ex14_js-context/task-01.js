@@ -49,7 +49,7 @@ const calc = {
 }
 
 for (let key in calc) {
-  if (typeof calc[key] == 'function') {
+  if (typeof calc[key] === 'function') {
     calc[key] = calc[key].bind(calc);
   }
 }
