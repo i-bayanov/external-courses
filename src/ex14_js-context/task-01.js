@@ -12,7 +12,7 @@ const calc = {
   },
 
   fetchData(cb) {
-    setTimeout(cb.bind(calc), 1000, 500);
+    setTimeout(cb.bind(this), 1000, 500);
   },
 
   reset() {
