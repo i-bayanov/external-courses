@@ -12,9 +12,7 @@ const calc = {
   },
 
   fetchData(cb) {
-    setTimeout(() => cb(500), 1000);
-    
-    return;
+    setTimeout(cb.bind(calc), 1000, 500);
   },
 
   reset() {
@@ -46,12 +44,6 @@ const calc = {
 
     return this;
   },
-}
-
-for (let key in calc) {
-  if (typeof calc[key] === 'function') {
-    calc[key] = calc[key].bind(calc);
-  }
 }
 
 module.exports = calc;
