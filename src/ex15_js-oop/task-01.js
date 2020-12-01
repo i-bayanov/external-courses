@@ -103,8 +103,10 @@ class NewYearGift {
   }
 
   findSweet(str) {
+    const re = new RegExp(`${str}`, 'i')
+    
     for (let elem of this.content) {
-      if (elem.name.includes(str)) {
+      if (elem.name.match(re)) {
         console.log(`${elem.name} (${elem.type}):`);
         console.log(`    кол-во ${elem.quantity} шт., общий вес ${elem.weigth} г`);
         console.log(`    в рейтинге любимых на ${elem.favourite} месте`)
