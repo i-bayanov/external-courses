@@ -103,7 +103,7 @@ class NewYearGift {
   }
 
   findSweet(str) {
-    const re = new RegExp(`${str}`, 'i')
+    const re = new RegExp(str, 'i')
     
     for (let elem of this.content) {
       if (elem.name.match(re)) {

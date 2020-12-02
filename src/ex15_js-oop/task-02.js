@@ -50,7 +50,7 @@ const flat = {
 };
 
 const findDevice = (str) => {
-  const re = new RegExp(`${str}`, 'i');
+  const re = new RegExp(str, 'i');
 
   for (let room in flat) {
     if (Array.isArray(flat[room])) {
