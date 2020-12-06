@@ -40,21 +40,27 @@ class Sweets {
   }
 }
 
+const typesOfSweets = {
+  chocolateCandy: 'шоколадная конфета',
+  caramelCandy: 'карамель',
+  toffy: 'ирис'
+};
+
 class ChocolateCandy extends Sweets {
   constructor(name, favourite, quantity, weigth) {
-    super('шоколадная конфета', name, favourite, quantity, weigth);
+    super(typesOfSweets.chocolateCandy, name, favourite, quantity, weigth);
   }
 }
 
 class CaramelCandy extends Sweets {
   constructor(name, favourite, quantity, weigth) {
-    super('карамель', name, favourite, quantity, weigth);
+    super(typesOfSweets.caramelCandy, name, favourite, quantity, weigth);
   }
 }
 
 class Toffy extends Sweets {
   constructor(name, favourite, quantity, weigth) {
-    super('ирис', name, favourite, quantity, weigth);
+    super(typesOfSweets.toffy, name, favourite, quantity, weigth);
   }
 }
 
@@ -70,17 +76,11 @@ class NewYearGift {
   }
   
   get weigth() {
-    return this._weight;
+    return this._weigth;
   }
 
   set weigth([...sweets]) {
-    let sum = 0;
-
-    for (let elem of [...sweets]) {
-      sum += elem.weigth;
-    }
-
-    this._weight = sum;
+    this._weigth = [...sweets].reduce((a, b) => {return a + b.weigth}, 0);
   }
 
   sortSweets(param) {

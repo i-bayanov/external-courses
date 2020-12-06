@@ -37,11 +37,7 @@ const flat = {
 
     for (let room in this) {
       if (Array.isArray(this[room])) {
-        for (let device of this[room]) {
-          if (device.isTurnedOn) {
-            sum += device.power;
-          }
-        }
+        sum = this[room].reduce((a, b) => {return b.isTurnedOn ? a + b.power : a}, sum);
       }
     }
 
