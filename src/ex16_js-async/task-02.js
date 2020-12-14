@@ -1,10 +1,10 @@
 const debounce = (f, ms) => {
   let timerID = null;
 
-  return function(arg) {
+  return function(...args) {
     clearTimeout(timerID);
 
-    timerID = setTimeout(f, ms, arg);
+    timerID = setTimeout(f, ms, ...args);
   };
 }
 
@@ -13,14 +13,12 @@ const searchResults = document.querySelector('.searchResults');
 
 const search = (event) => {
   const str = event.target.value;
-  
-  if (!str) {
-    searchResults.innerHTML = '';
-    
-    return;
-  }
 
   searchResults.innerHTML = '';
+
+  if (!str) {
+    return;
+  }
   
   const results = document.createElement('div');
   results.innerHTML = `<br>Результаты поиска:<br> ${dataMock
