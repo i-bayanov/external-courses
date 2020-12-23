@@ -1,9 +1,12 @@
+import { taskLists } from './renderer.js';
+import { renderer } from './renderer.js';
+
 const addCardButtons = document.getElementsByClassName('addCard');
 const lists = document.getElementsByClassName('taskList');
 const newTaskInput = document.createElement('input');
 const prevTasksList = document.createElement('div');
 
-const addTask = (event) => {
+export const addTask = (event) => {
   for (let i= 0; i < addCardButtons.length; i++) {
     addCardButtons[i].removeEventListener('click', addTask);
     addCardButtons[i].disabled = true;

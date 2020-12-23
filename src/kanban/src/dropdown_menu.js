@@ -18,12 +18,11 @@ logOut.innerText = 'Log out';
 
 [account, tasks, hr, logOut].forEach(item => dropDownMenu.appendChild(item));
 
-const showDropMenu = (event) => {
+export const showDropMenu = () => {
   userMenu.appendChild(dropDownMenu);
   arrow.classList.add('active');
   userMenu.removeEventListener('click', showDropMenu);
-  event.stopPropagation();
-  document.addEventListener('click', isClickInside);
+  setTimeout(() => document.addEventListener('click', isClickInside));
 }
 
 const hideDropMenu = () => {
