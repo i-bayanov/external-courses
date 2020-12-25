@@ -41,7 +41,7 @@ export const addTask = (event) => {
     }
 
     const buttonPos = event.currentTarget.getBoundingClientRect().top;
-    if (buttonPos > document.body.clientHeight - 360) {
+    if (buttonPos > document.body.clientHeight - 400) {
       prevTasksList.classList.add('prevTasksListUp');
       prevTasksList.style.bottom = `-${document.body.clientHeight - 100 - buttonPos}px`;
       prevTasksList.classList.remove('prevTasksList');
@@ -65,20 +65,26 @@ const saveTask = () => {
     document.querySelector('.main').firstChild.querySelector('.listOfTasks').removeChild(newTaskInput);
   }
   newTaskInput.value = '';
-  for (let i= 0; i < addCardButtons.length; i++) {
-    addCardButtons[i].addEventListener('click', addTask);
-    addCardButtons[i].disabled = false;
+  for (let i = 0; i < addCardButtons.length; i++) {
+    if ((i > 0) && (taskLists[i-1].issues.length === 0)) {
+      addCardButtons[i].disabled = true;
+    } else {
+      addCardButtons[i].addEventListener('click', addTask);
+      addCardButtons[i].disabled = false;
+    }
   }
 }
 
 const removeTaskList = () => {
-  prevTasksList.parentNode.querySelector('.addCard').disabled = false;
-  prevTasksList.parentNode.querySelector('.addCard').addEventListener('click', addTask);
   prevTasksList.parentNode.removeChild(prevTasksList);
   document.removeEventListener('click', isClickInsidePrevTasksList);
   for (let i= 0; i < addCardButtons.length; i++) {
-    addCardButtons[i].addEventListener('click', addTask);
-    addCardButtons[i].disabled = false;
+    if ((i > 0) && (taskLists[i-1].issues.length === 0)) {
+      addCardButtons[i].disabled = true;
+    } else {
+      addCardButtons[i].addEventListener('click', addTask);
+      addCardButtons[i].disabled = false;
+    }
   }
 }
 

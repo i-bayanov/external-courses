@@ -45,6 +45,10 @@ export const renderer = () => {
     }
   }
 
+  main.insertAdjacentHTML('beforeend', '<div class="corrector"></div>');
+
+  const finished = document.getElementById('finished');
+  const active = document.getElementById('active');
   finished.innerText = '0';
   active.innerText = '0';
   let doneTasks = taskLists[taskLists.length - 1].issues.length;

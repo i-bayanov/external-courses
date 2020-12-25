@@ -10,6 +10,12 @@
   padding: 20px 10px;
 }
 
+.corrector {
+  height: 100%;
+  width: 10px;
+  flex-shrink: 0;
+}
+
 .taskList, .prevTasksList, .prevTasksListUp {
   position: relative;
   display: flex;

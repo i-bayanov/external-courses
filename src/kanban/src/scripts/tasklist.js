@@ -4,19 +4,9 @@ class TaskList extends HTMLElement {
 
     this.classList.add('taskList', `${title}`);
 
-    const titleArr = title.match(/[A-Z]/g);
-    if (titleArr) {
-      let index = 0;
-      for (let elem of titleArr) {
-        index = title.indexOf(elem, index);
-        title = title.slice(0, index) + ' ' + title.slice(index);
-        index += 2;
-      }
-    }
-
     this.innerHTML = `
       <div class='taskListHead'>
-        ${title.slice(0, 1).toUpperCase() + title.slice(1)}
+        ${makeRightName(title)}
         <button type="button" title="context menu" class="context">•••</button>
       </div>
       <ul class="listOfTasks"></ul>
@@ -30,6 +20,22 @@ class TaskList extends HTMLElement {
       </button>
     `;
   }
+}
+
+const makeRightName = (name) => {
+  const nameArr = name.match(/[A-Z]/g);
+  let newName = name;
+
+  if (nameArr) {
+    let index = 0;
+    for (let elem of nameArr) {
+      index = newName.indexOf(elem, index);
+      newName = newName.slice(0, index) + ' ' + newName.slice(index);
+      index += 2;
+    }
+  }
+
+  return newName.slice(0, 1).toUpperCase() + newName.slice(1);
 }
 
 customElements.define('task-list', TaskList);
